@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-title: 'Genos';
+    --font-text: 'Liter';
+    --font-headings: 'Chonburi';
+
+    --color-white: #fffcf2ff;
+    --color-offwhite: #ccc5b9ff;
+    --color-gray: #6c6660ff;
+    --color-black: #151514ff;
+    --color-pink: #f193a1ff;
+
+    --font-size-regular: 1rem;
+    --font-weight-regular:500;
+}
+
+body {
+    background: var(--color-black);
+    font-family: var(--font-text);
+    color: var(--color-white);
+    font-weight: var(--font-weight-regular);
+    font-size: var(--font-size-regular);
+
+    padding: 2em;
+}
+
+/* ##############
+        TITLE 
+#################*/
+.header {
+    font-family: var(--font-title);
+    font-size: 1.25rem;
+    padding-bottom: 2em;
+    margin-top: 4em;
+}
+.header--title {
+    line-height: 0.8;
+}
+
+/* ##############
+        MAIN 
+#################*/
+.main {
+    background-color: pink;
+}
+
+/* ##############
+        FOOTER 
+#################*/
+.footer {
+    text-align: center;
+    /* background-color: blue; */
+    padding: 2.5em 0;
+    margin-top: 3em;
+}
