@@ -11,6 +11,8 @@ items.forEach(item => item.addEventListener('click', () => {
     item.classList.add('levitate');
     setTimeout(function() {
         window.location.href = `watchVideos.html?videos=${item.dataset.link}`;
+        item.classList.remove('levitate');
+
     }, 500);
 }));
 
