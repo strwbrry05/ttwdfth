@@ -1,18 +1,18 @@
 
 const horizontalScroll = document.querySelector('.items');
-const items = document.querySelectorAll('[data-link]');
-
 const main = document.querySelector('.main');
 horizontalScroll.scrollLeft = (horizontalScroll.scrollWidth - horizontalScroll.clientWidth) / 2;
 
+
+// linking to watch page
+const items = document.querySelectorAll('[data-link]');
 
 items.forEach(item => item.addEventListener('click', () => {
     item.classList.add('levitate');
     setTimeout(function() {
         window.location.href = `watchVideos.html?videos=${item.dataset.link}`;
     }, 500);
-}))
-
+}));
 
 
 // drag scroll bar
