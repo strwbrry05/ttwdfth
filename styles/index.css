@@ -50,6 +50,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 0.25em;
 }
 
 ::-webkit-scrollbar {
@@ -57,7 +58,8 @@ body {
 }
 
 .items {
-    height: 350px;
+    margin-top: 2em;
+    height: 250px;
     width: 100%;
 
     overflow-x: scroll;
@@ -148,5 +150,4 @@ body {
 #################*/
 .footer {
     text-align: center;
-    padding: 1em 0;
 }
