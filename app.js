@@ -1,17 +1,19 @@
 
 const horizontalScroll = document.querySelector('.items');
+const items = document.querySelectorAll('[data-link]');
+
+const main = document.querySelector('.main');
 horizontalScroll.scrollLeft = (horizontalScroll.scrollWidth - horizontalScroll.clientWidth) / 2;
 
 
-const item5 = document.querySelector('.item5');
+items.forEach(item => item.addEventListener('click', () => {
+    item.classList.add('levitate');
+    setTimeout(function() {
+        window.location.href = `watchVideos.html?videos=${item.dataset.link}`;
+    }, 500);
+}))
 
-item5.addEventListener('mouseenter', e => {
-    item5.classList.add('levitate');
-});
 
-item5.addEventListener('mouseleave', e => {
-    item5.classList.remove('levitate');
-});
 
 // drag scroll bar
 const slider = document.querySelector('.items');
