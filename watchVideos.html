@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Chonburi&family=Genos:ital,wght@0,100..900;1,100..900&family=Liter&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/983bf8ad0b.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="startScreen">
@@ -27,21 +31,27 @@
       </p>
     </div>
 
-    <div class="controls">
-      <div class="prevVideo"></div>
-      <div class="nextVideo"></div>
-    </div>
-
     <div class="videoHolder">
-      <video class="player" src="" autoplay loop playsinline></video>
-    </div>
+      <div class="controls">
+        <div class="prevVideo"></div>
+        <div class="nextVideo"></div>
+      </div>
 
-    <div class="menu">
-      <ul class="menuOptions">
-        <li><a href="#">pause</a></li>
-        <li><a href="index.html">home</a></li>
-        <li><a href="#">save</a></li>
-      </ul>
+      <video class="player" src="" autoplay loop playsinline></video>
+
+      <div class="menu">
+        <ul class="menuOptions">
+          <li>
+            <i class="fa-solid fa-pause fa-xl"></i>
+          </li>
+          <li>
+            <i class="fa-solid fa-house fa-lg"></i>
+          </li>
+          <li>
+            <i class="fa-solid fa-floppy-disk fa-xl"></i>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <script type="module" src="watch.js"></script>
