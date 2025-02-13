@@ -28,6 +28,18 @@ body {
     color: var(--color-white);
     font-weight: var(--font-weight-regular);
     font-size: var(--font-size-regular);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.videoHolder {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: pink;
 }
 
 .player {
