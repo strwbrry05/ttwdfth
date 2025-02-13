@@ -32,35 +32,40 @@ body {
 }
 
 .videoHolder {
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
-
     overflow-y: hidden;
     overflow-x: hidden;
 }
 
 .item {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.item.big {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: start;
 }
 
-.item.big {
-    width: 100vw;
-}
-
 .bigVideo {
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .item.small {
-    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+
 }
 
 .smallVideo {
     width: 100%;
     height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
