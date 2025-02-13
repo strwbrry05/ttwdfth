@@ -34,12 +34,57 @@ body {
     justify-content: center;
 }
 
+
+.videoHolder {
+    /* height: 100vh; */
+    /* width: 100vw; */
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+
+    scroll-snap-type: y mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 1em;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+
+    background-color: palegoldenrod;
+    height: 100vh;
+    width: 100vw;
+}
+
+.player {
+    width: 100vw;
+    /* height: 100vh; */
+}
+
+/* .player0 {
+    height: 100vh;
+} */
+
 /* .videoHolder.fullsize {
 
 } */
-
+/* 
 .player.bigVideo {
-    /* height: 100vh; */
     width: 100%;
 }
 
@@ -60,4 +105,4 @@ body {
         height: 100vh;
         width: 100%;
     }
-}
+} */
