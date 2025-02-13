@@ -40,8 +40,6 @@ body {
 
 .startScreen.active {
     min-height: 100vh;
-    opacity: 80%;
-    background-color: var(--color-black);
 
     display: grid;
     grid-template-columns: 1fr;
@@ -53,8 +51,6 @@ body {
     align-items: center;
     position: relative;
     z-index: 3;
-
-    font-size: 1.25rem;
 }
 
 .instructions{
@@ -69,6 +65,8 @@ body {
     position: relative;
     z-index: 2;
 
+    font-size: 1.25rem;
+    background-color: var(--color-black);
     opacity: 80%;
 }
 .left {
@@ -77,6 +75,7 @@ body {
     min-height: inherit;
     align-content: center;
     border-right: 1px solid black;
+    opacity: 60%;
 }
 .right {
     text-align: center;
@@ -84,21 +83,28 @@ body {
     align-content: center;
     border-left: 1px solid black;
     width: 50%;
+    opacity: 60%;
 }
+
 
 .startBtn {
     text-align: center;
-    padding: 1em 0;
-    margin-bottom: 50%;
+    padding: 0.5em 0;
     margin-left: 2.5em;
     margin-right: 2.5em;
 
     position: relative;
     z-index: 3;
+    opacity: 100%;
 
     grid-column: 1;
     grid-row: 1;
-    background-color: var(--color-gray);
+
+    font-family: var(--font-headings);
+    color: var(--color-black);
+    background-color: var(--color-pink);
+    font-weight: 600;
+    border-radius: 15px;
 }
 
 .startScreen.gone {
