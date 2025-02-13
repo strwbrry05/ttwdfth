@@ -4,6 +4,11 @@ const urlParams = new URLSearchParams(queryString);
 const videoType = urlParams.get('videos');
 console.log(videoType);
 
+const holder = document.querySelector('.videoHolder');
+const player = document.querySelector('.player');
+const startScreen = document.querySelector('.startScreen');
+
+let isFirstRun = true;
 
 selectVideos(videoType);
 
@@ -16,9 +21,11 @@ async function selectVideos(videoType) {
     const videoTypeArr = data[videoType];
     let videoNum = 0;
 
+    startScreen.classList.add('active');
     displayVideo(videoTypeArr, videoNum);
 
-    document.addEventListener('click', (e) => {
+    holder.addEventListener('click', (e) => {
+        isFirstRun = false;
         videoNum++;
         if (videoNum === videoTypeArr.length) {
             videoNum = 0;
@@ -29,14 +36,12 @@ async function selectVideos(videoType) {
 
 }
 
-//centering
-const verticalScroll = document.querySelector('.videoHolder');
-verticalScroll.scrollTop = (verticalScroll.scrollTop - verticalScroll.clientHeight) / 2;
+
+
 
 //displaying videos
 function displayVideo(videoTypeArr, videoNum) {  
-    const holder = document.querySelector('.videoHolder');
-    const player = document.querySelector('.player');
+
 
     const videoArr = videoTypeArr[videoNum];
     const videoLink = videoArr[0];
@@ -50,5 +55,18 @@ function displayVideo(videoTypeArr, videoNum) {
         player.src = videoLink;
         holder.classList.add('smallHolder');
     }
+
+    if (videoNum === 0 && isFirstRun === true) {
+        startScreen.classList.add('active');
+        player.pause();
+        startScreen.addEventListener('click', () => {
+            startScreen.classList.remove('active');
+            player.play();
+        });
+    }
+    else {
+        startScreen.classList.remove('active');
+    }
+
 }
 
