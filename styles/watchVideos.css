@@ -42,10 +42,62 @@ body {
     opacity: 80%;
     background-color: var(--color-black);
 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
     grid-column: 1;
     grid-row: 1;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+
+    font-size: 1.25rem;
+}
+
+.instructions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    min-height: inherit;
+
+    grid-row: 1;
+    grid-column: 1;
     position: relative;
     z-index: 2;
+
+    opacity: 80%;
+}
+.left {
+    text-align: center;
+    width: 50%;
+    min-height: inherit;
+    align-content: center;
+    border-right: 1px solid black;
+}
+.right {
+    text-align: center;
+    min-height: inherit;
+    align-content: center;
+    border-left: 1px solid black;
+    width: 50%;
+}
+
+.startBtn {
+    text-align: center;
+    padding: 1em 0;
+    margin-bottom: 50%;
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+
+    position: relative;
+    z-index: 3;
+
+    grid-column: 1;
+    grid-row: 1;
+    background-color: var(--color-gray);
 }
 
 .videoHolder {
