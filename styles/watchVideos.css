@@ -34,14 +34,21 @@ body {
     align-items: center;
 }
 
-.videoHolder {
+.videoHolder.fullsize {
+    /* height: 100%; */
+}
+
+.player.bigVideo {
+    width: 100%;
+}
+
+.videoHolder.smallsize {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: pink;
 }
 
-.player {
+.player.smallVideo {
     width: 100%;
 }
