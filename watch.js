@@ -6,7 +6,12 @@ console.log(videoType);
 
 const holder = document.querySelector('.videoHolder');
 const player = document.querySelector('.player');
+
 const startScreen = document.querySelector('.startScreen');
+const instructions = document.querySelector('.instructions');
+const leftI = document.querySelector('.left');
+
+
 
 let isFirstRun = true;
 
@@ -47,25 +52,21 @@ function displayVideo(videoTypeArr, videoNum) {
     const videoLink = videoArr[0];
     const videoHeight = videoArr[1];
 
-    if (videoHeight === 1000) {
-        player.src = videoLink;
-        holder.classList.add('bigHolder');
-    }
-    else if (videoHeight === 900) {
-        player.src = videoLink;
-        holder.classList.add('smallHolder');
-    }
+    player.src = videoLink;
 
     if (videoNum === 0 && isFirstRun === true) {
         startScreen.classList.add('active');
         player.pause();
+
         startScreen.addEventListener('click', () => {
             startScreen.classList.remove('active');
+            startScreen.classList.add('gone');
             player.play();
         });
     }
     else {
         startScreen.classList.remove('active');
+        startScreen.classList.add('gone');
     }
 
 }
