@@ -87,8 +87,8 @@ allVideoDivs.forEach((videoDiv, i) => {
   
   ScrollTrigger.create({
     trigger: videoElem,
-    start: 'bottom 100%',
-    end: 'top 0%',
+    start: 'top 45%',
+    end: 'bottom 0%',
     markers: true,
     onEnter: () => {videoElem.play(); videoElem.muted = false;},
     onEnterBack: () => { videoElem.play(); videoElem.currentTime = 0;},
