@@ -1,12 +1,8 @@
-// import { gsap}  from "gsap";
-// gsap.registerPlugin(ScrollTrigger);
-
 // getting and showing appropriate videos
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const videoType = urlParams.get('videos');
 console.log(videoType);
-
 
 const player0 = document.querySelector('.player0');
 const player1 = document.querySelector('.player1');
@@ -14,8 +10,6 @@ const player2 = document.querySelector('.player2');
 
 // const holder = document.querySelector('.videoHolder');
 const item = document.querySelector('.item');
-
-let count = 0;
 
 
 selectVideos(videoType);
@@ -95,7 +89,7 @@ allVideoDivs.forEach((videoDiv, i) => {
     trigger: videoElem,
     start: 'bottom 100%',
     end: 'top 0%',
-    markers: false,
+    markers: true,
     onEnter: () => {videoElem.play(); videoElem.muted = false;},
     onEnterBack: () => { videoElem.play(); videoElem.currentTime = 0;},
     onLeave: () => videoElem.pause(),
