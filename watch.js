@@ -11,9 +11,13 @@ const startScreen = document.querySelector('.startScreen');
 const instructions = document.querySelector('.instructions');
 const leftI = document.querySelector('.left');
 
+const controls = document.querySelector('.controls');
+const prev = document.querySelector('.prevVideo');
+const next = document.querySelector('.nextVideo');
 
 
 let isFirstRun = true;
+let videoNum = 0;
 
 selectVideos(videoType);
 
@@ -24,20 +28,37 @@ async function selectVideos(videoType) {
     console.log(data[videoType]);
 
     const videoTypeArr = data[videoType];
-    let videoNum = 0;
 
     startScreen.classList.add('active');
     displayVideo(videoTypeArr, videoNum);
 
-    holder.addEventListener('click', (e) => {
+    prev.addEventListener('click', () => {
+        isFirstRun = false;
+        videoNum--;
+        if (videoNum === -1) {
+            videoNum = videoTypeArr.length - 1;
+        }
+        displayVideo(videoTypeArr, videoNum);
+    });
+
+    next.addEventListener('click', () => {
         isFirstRun = false;
         videoNum++;
         if (videoNum === videoTypeArr.length) {
             videoNum = 0;
         }
         displayVideo(videoTypeArr, videoNum);
-        console.log('next!');
     });
+
+    // holder.addEventListener('click', (e) => {
+    //     isFirstRun = false;
+    //     videoNum++;
+    //     if (videoNum === videoTypeArr.length) {
+    //         videoNum = 0;
+    //     }
+    //     displayVideo(videoTypeArr, videoNum);
+    //     console.log('next!');
+    // });
 
 }
 
@@ -56,11 +77,14 @@ function displayVideo(videoTypeArr, videoNum) {
 
     if (videoNum === 0 && isFirstRun === true) {
         startScreen.classList.add('active');
+        controls.classList.add('gone');
         player.pause();
 
         startScreen.addEventListener('click', () => {
             startScreen.classList.remove('active');
             startScreen.classList.add('gone');
+            controls.classList.remove('gone');
+            controls.classList.add('active');
             player.play();
         });
     }

@@ -37,6 +37,8 @@ body {
     z-index: 0;
 }
 
+/*  START SCREEN
+    mobile exclusive  */
 
 .startScreen.active {
     min-height: 100vh;
@@ -85,8 +87,6 @@ body {
     width: 50%;
     opacity: 60%;
 }
-
-
 .startBtn {
     text-align: center;
     padding: 0.5em 0;
@@ -107,10 +107,42 @@ body {
     border-radius: 15px;
 }
 
+/* after user initializes session*/
 .startScreen.gone {
     display: none;
 }
 
+/* controls */
+.controls.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    grid-row: 1;
+    grid-column: 1;
+    z-index: 2;
+}
+
+.prevVideo {
+    width: 50%;
+    min-height: 100vh;
+    background-color: transparent;
+}
+
+.nextVideo {
+    width: 50%;
+    min-height: 100vh;
+    background-color: transparent;
+}
+
+/* after user initializes session*/
+.controls.gone {
+    display: none;
+}
+
+/* video holder and player dimensions*/
 .videoHolder {
     min-height: 100vh;
     overflow-x: hidden;
