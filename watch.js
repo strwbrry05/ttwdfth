@@ -4,13 +4,6 @@ const urlParams = new URLSearchParams(queryString);
 const videoType = urlParams.get('videos');
 console.log(videoType);
 
-const player0 = document.querySelector('.player0');
-const player1 = document.querySelector('.player1');
-const player2 = document.querySelector('.player2');
-
-// const holder = document.querySelector('.videoHolder');
-const item = document.querySelector('.item');
-
 
 selectVideos(videoType);
 
@@ -21,43 +14,66 @@ async function selectVideos(videoType) {
     console.log(data[videoType]);
 
     const videoTypeArr = data[videoType];
+    let videoNum = 0;
 
-    displayVideo(videoTypeArr);
+    displayVideo(videoTypeArr, videoNum);
 
-    // document.addEventListener('click', (e) => {
-    //     count++;
-    //     if (count === 4) {
-    //         count = 0;
-    //     }
-    //     displayVideo(videoTypeArr);
-    //     console.log('next!');
-    // });
+    document.addEventListener('click', (e) => {
+        videoNum++;
+        if (videoNum === videoTypeArr.length) {
+            videoNum = 0;
+        }
+        displayVideo(videoTypeArr, videoNum);
+        console.log('next!');
+    });
 
 }
 
-function displayVideo(videoTypeArr) {  
-    let video0 = videoTypeArr[0];
-    let video0Link = video0[0];
-    let video0Height = video0[1]; 
-    player0.src = video0Link;
 
-    let video1 = videoTypeArr[1];
-    let video1Link = video1[0];
-    let video1Height = video1[1]; 
-    player1.src = video1Link;
+function displayVideo(videoTypeArr, videoNum) {  
+    const holder = document.querySelector('.videoHolder');
 
-    // if (video1Height === 1000) {
-    //     item.classList.add('small');
-    //     player1.classList.add('bigVideo');
-    // }
-    // else if (video1Height === 900) {
-    //     item.classList.add('small');
-    //     player1.classList.add('smallVideo');
-    // }
+    let html = ``;
+    const videoArr = videoTypeArr[videoNum];
+    const videoLink = videoArr[0];
+    const videoHeight = videoArr[1];
 
-    let video2 = videoTypeArr[2];
-    let video2Link = video2[0];
-    player2.src = video2Link;
+    // html += 
+    // `<div class="item">
+    //     <video class="player player${videoNum}" src="${videoLink}" autoplay loop playsinline></video>
+    // </div>`;
+
+    if (videoHeight === 1000) {
+        html += 
+        `<div class="item big">
+            <video class="player player${videoNum} bigVideo" src="${videoLink}" autoplay loop playsinline></video>
+        </div>`;
+    }
+    else if (videoHeight === 900) {
+        html += 
+        `<div class="item small">
+            <video class="player player${videoNum} smallVideo" src="${videoLink}" autoplay loop playsinline></video>
+        </div>`;
+    }
+
+    holder.innerHTML = html;
+
+
+
+    // let video0 = videoTypeArr[0];
+    // let video0Link = video0[0];
+    // let video0Height = video0[1]; 
+    // player0.src = video0Link;
+
+    // let video1 = videoTypeArr[1];
+    // let video1Link = video1[0];
+    // let video1Height = video1[1]; 
+    // player1.src = video1Link;
+
+    
+    // let video2 = videoTypeArr[2];
+    // let video2Link = video2[0];
+    // player2.src = video2Link;
 
     // let videoInfo = videoTypeArr[count];
     // let videoLink = videoInfo[0];
@@ -78,30 +94,3 @@ function displayVideo(videoTypeArr) {
     // player.src = videoLink;
 }
 
-
-let allVideoDivs = gsap.utils.toArray('.item');
-
-allVideoDivs.forEach((videoDiv, i) => {
-  
-  let videoElem = videoDiv.querySelector('video')
-  
-  ScrollTrigger.create({
-    trigger: videoElem,
-    start: 'top 45%',
-    end: 'bottom 0%',
-    markers: true,
-    onEnter: () => {videoElem.play(); videoElem.muted = false;},
-    onEnterBack: () => { videoElem.play(); videoElem.currentTime = 0;},
-    onLeave: () => videoElem.pause(),
-    onLeaveBack: () => {videoElem.pause(); videoElem.currentTime = 0;},
-  });
-  
-});
-
-// document.addEventListener('mousedown', (e) => {
-//     console.log('hi');
-// })
-
-// document.addEventListener('mouseup', (e) => {
-//     console.log('bye');
-// })
