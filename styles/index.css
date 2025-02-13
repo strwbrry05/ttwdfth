@@ -167,6 +167,14 @@ body {
         margin-bottom: -.75em;
     }
 
+    ::-webkit-scrollbar {
+        background: var(--color-offwhite);
+        height: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: var(--color-pink);
+      }
+
     /* ##############
             MAIN 
     #################*/
