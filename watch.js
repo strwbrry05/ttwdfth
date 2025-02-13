@@ -49,17 +49,6 @@ async function selectVideos(videoType) {
         }
         displayVideo(videoTypeArr, videoNum);
     });
-
-    // holder.addEventListener('click', (e) => {
-    //     isFirstRun = false;
-    //     videoNum++;
-    //     if (videoNum === videoTypeArr.length) {
-    //         videoNum = 0;
-    //     }
-    //     displayVideo(videoTypeArr, videoNum);
-    //     console.log('next!');
-    // });
-
 }
 
 
