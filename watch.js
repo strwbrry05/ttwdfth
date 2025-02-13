@@ -29,68 +29,26 @@ async function selectVideos(videoType) {
 
 }
 
+//centering
+const verticalScroll = document.querySelector('.videoHolder');
+verticalScroll.scrollTop = (verticalScroll.scrollTop - verticalScroll.clientHeight) / 2;
 
+//displaying videos
 function displayVideo(videoTypeArr, videoNum) {  
     const holder = document.querySelector('.videoHolder');
+    const player = document.querySelector('.player');
 
-    let html = ``;
     const videoArr = videoTypeArr[videoNum];
     const videoLink = videoArr[0];
     const videoHeight = videoArr[1];
 
-    // html += 
-    // `<div class="item">
-    //     <video class="player player${videoNum}" src="${videoLink}" autoplay loop playsinline></video>
-    // </div>`;
-
     if (videoHeight === 1000) {
-        html += 
-        `<div class="item big">
-            <video class="player player${videoNum} bigVideo" src="${videoLink}" autoplay loop playsinline></video>
-        </div>`;
+        player.src = videoLink;
+        holder.classList.add('bigHolder');
     }
     else if (videoHeight === 900) {
-        html += 
-        `<div class="item small">
-            <video class="player player${videoNum} smallVideo" src="${videoLink}" autoplay loop playsinline></video>
-        </div>`;
+        player.src = videoLink;
+        holder.classList.add('smallHolder');
     }
-
-    holder.innerHTML = html;
-
-
-
-    // let video0 = videoTypeArr[0];
-    // let video0Link = video0[0];
-    // let video0Height = video0[1]; 
-    // player0.src = video0Link;
-
-    // let video1 = videoTypeArr[1];
-    // let video1Link = video1[0];
-    // let video1Height = video1[1]; 
-    // player1.src = video1Link;
-
-    
-    // let video2 = videoTypeArr[2];
-    // let video2Link = video2[0];
-    // player2.src = video2Link;
-
-    // let videoInfo = videoTypeArr[count];
-    // let videoLink = videoInfo[0];
-    // let videoHeight = videoInfo[1];
-    
-    // if (videoHeight === 1000) {
-    //     holder.classList.remove('smallsize');
-    //     player.classList.remove('smallVideo');
-    //     holder.classList.add('fullsize');
-    //     player.classList.add('bigVideo');
-    // }
-    // else if (videoHeight === 900) {
-    //     holder.classList.remove('fullsize');
-    //     player.classList.remove('bigVideo');
-    //     holder.classList.add('smallsize');
-    //     player.classList.add('smallVideo');
-    // }
-    // player.src = videoLink;
 }
 

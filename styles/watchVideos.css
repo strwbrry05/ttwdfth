@@ -32,40 +32,14 @@ body {
 }
 
 .videoHolder {
-    overflow-y: hidden;
     overflow-x: hidden;
-}
+    min-height: 100vh;
 
-.item {
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
-
-.item.big {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: start;
-}
-
-.bigVideo {
-    width: 100%;
-    /* height: 100%; */
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
-
-.item.small {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-
 }
 
-.smallVideo {
+.player {
     width: 100%;
-    height: 100%;
-    overflow-y: hidden;
-    overflow-x: hidden;
 }
