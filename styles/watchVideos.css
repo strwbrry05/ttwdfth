@@ -124,8 +124,9 @@ body {
     border-top: 3px solid var(--color-pink);
     border-bottom: 3px solid var(--color-pink);
 
-    /* grid-row: 1;
-    grid-column: 1; */
+    text-align: center;
+
+
     z-index: 4;
 }
 
@@ -151,11 +152,11 @@ body {
 }
 
 .videoHolder.small {
-    height: 600px;
+    height: 500px;
 }
 
 .player.big {
-    height: 600px;
+    height: 500px;
 }
 
 .player {
