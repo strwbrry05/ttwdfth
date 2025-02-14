@@ -63,6 +63,15 @@ function displayVideo(videoTypeArr, videoNum) {
     const videoHeight = videoArr[1];
 
     player.src = videoLink;
+    if (videoHeight === 900) {
+        holder.classList.add('small');
+        player.classList.remove('big');
+
+    }
+    else if (videoHeight === 1000) {
+        holder.classList.remove('small');
+        player.classList.add('big');
+    }
 
     if (videoNum === 0 && isFirstRun === true) {
         startScreen.classList.add('active');
