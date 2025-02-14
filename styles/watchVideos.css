@@ -98,11 +98,46 @@ body {
     display: none;
 }
 
+.main {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    grid-column: 1;
+    grid-row: 1;
+
+    position: relative;
+    z-index: 1; 
+}
+
+
+
+/*change view*/
+.viewMenu {
+    width: 100%;
+    height: 50px;
+    padding: 0.75em 0;
+    background-color: var(--color-black);
+    border-top: 3px solid var(--color-pink);
+    border-bottom: 3px solid var(--color-pink);
+
+    grid-row: 1;
+    grid-column: 1;
+    z-index: 4;
+}
+
 
 /* video holder and player dimensions*/
 .videoHolder {
-    min-height: 100vh;
+   height: inherit;
+    background-color: pink;
     overflow-x: hidden;
+
+    /* margin-top: 50px; */
+    /* padding: 1em 0; */
 
     display: grid;
     grid-template-columns: 1fr;
@@ -131,7 +166,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    height: 100vh;
+    height: 100%;
 
     grid-row: 1;
     grid-column: 1;
@@ -157,10 +192,7 @@ body {
 
 /* menu and menu options*/
 .menu {
-    z-index: 4;
-
     width: 100%;
-    margin-top: -8em;
     opacity: 95%;
     padding: 0.75em 0;
     background-color: var(--color-black);
