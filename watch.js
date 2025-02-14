@@ -9,6 +9,7 @@ let desktopQ = window.matchMedia("(min-width:1000px)");
 
 let isFirstRun = true;
 let videoNum = 0;
+let isPaused = false;
 
 if (desktopQ.matches) {
     const mobileMain = document.querySelector('.main');
@@ -38,6 +39,7 @@ if (desktopQ.matches) {
 
         prev.addEventListener('click', () => {
             isFirstRun = false;
+            isPaused = false;
             videoNum--;
             if (videoNum === -1) {
                 videoNum = videoTypeArr.length - 1;
@@ -46,6 +48,7 @@ if (desktopQ.matches) {
         });
         next.addEventListener('click', () => {
             isFirstRun = false;
+            isPaused = false;
             videoNum++;
             if (videoNum === videoTypeArr.length) {
                 videoNum = 0;
@@ -66,33 +69,23 @@ if (desktopQ.matches) {
         player.src = videoLink;
         player.play();
 
-        if (videoHeight === 900) {
-            // holder.classList.add('small');
-            // player.classList.remove('big');
-        }
-        else if (videoHeight === 1000) {
-            holder.classList.remove('deskSmall');
+        if (videoHeight === 1000) {
             player.classList.add('deskBig');
         }
-    
-        // if (videoNum === 0 && isFirstRun === true) {
-        //     startScreen.classList.add('active');
-        //     controls.classList.add('gone');
-        //     player.pause();
-    
-        //     startScreen.addEventListener('click', () => {
-        //         startScreen.classList.remove('active');
-        //         startScreen.classList.add('gone');
-        //         controls.classList.remove('gone');
-        //         controls.classList.add('active');
-        //         player.play();
-        //     });
-        // }
-        // else {
-        //     startScreen.classList.remove('active');
-        //     startScreen.classList.add('gone');
-        // }
+
     }
+
+    player.addEventListener('click', () => {
+        if (isPaused) {
+            player.play();
+            // pausePlay.innerHTML = `<i class="fa-solid fa-pause fa-xl"></i>`;
+            isPaused = false;
+        } else {
+            player.pause();
+            // pausePlay.innerHTML = `<i class="fa-solid fa-play fa-xl"></i>`;
+            isPaused = true;
+        }
+    })
 
     const homeBtn = document.querySelector('.desktopHomeBtn');
     homeBtn.addEventListener('mousedown', () => {
@@ -100,6 +93,7 @@ if (desktopQ.matches) {
     });
     homeBtn.addEventListener('mouseup', () => {
         homeBtn.classList.remove('clickActive');
+        window.location.href = 'index.html';
     });
 
     console.log('desktop!');
@@ -190,7 +184,7 @@ if (desktopQ.matches) {
     const homeBtn = document.querySelector('.fa-house');
     const pausePlay = document.querySelector('.pausePlay');
     const pauseBtn = document.querySelector('.fa-pause');
-    const saveBtn = document.querySelector('.fa-floppy-disk');
+    // const saveBtn = document.querySelector('.fa-floppy-disk');
     
     homeBtn.addEventListener('click', () => {
         window.location.href = 'index.html';
