@@ -41,7 +41,7 @@ body {
     mobile exclusive  */
 
 .startScreen.active {
-    height: 650px;
+    height: 660px;
 
     display: grid;
     grid-template-columns: 1fr;
@@ -153,11 +153,11 @@ body {
 }
 
 .videoHolder.small {
-    height: 525px;
+    height: 550px;
 }
 
 .player.big {
-    height: 525px;
+    height: 550px;
 }
 
 .player {
