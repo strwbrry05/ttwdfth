@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-y: hidden;
 }
 
 :root {
@@ -192,7 +193,9 @@ body {
         height: 375px;
         padding-right: 0em;
         padding-left: 0em;
-        column-gap: 2em
+        column-gap: 2em;
+        padding-right:4em;
+        padding-left: 4em;
     }
 
     .item {
@@ -219,8 +222,6 @@ body {
     .item.levitate {
         margin-bottom: 4em;
     }
-
-
 
     /* ##############
             FOOTER 
