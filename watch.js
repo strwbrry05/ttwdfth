@@ -75,14 +75,17 @@ if (desktopQ.matches) {
 
     }
 
-    player.addEventListener('click', () => {
+    const pausePlay = document.querySelector('.desktopPausePlay');
+    pausePlay.addEventListener('click', () => {
         if (isPaused) {
             player.play();
-            // pausePlay.innerHTML = `<i class="fa-solid fa-pause fa-xl"></i>`;
+            pausePlay.classList.remove('pause');
+            pausePlay.innerHTML = ``;
             isPaused = false;
         } else {
             player.pause();
-            // pausePlay.innerHTML = `<i class="fa-solid fa-play fa-xl"></i>`;
+            pausePlay.classList.add('pause');
+            pausePlay.innerHTML = `<i class="fa-solid fa-play fa-xl"></i>`;
             isPaused = true;
         }
     })
