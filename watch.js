@@ -4,14 +4,6 @@ const urlParams = new URLSearchParams(queryString);
 const videoType = urlParams.get('videos');
 console.log(videoType);
 
-const holder = document.querySelector('.videoHolder');
-const player = document.querySelector('.player');
-
-const startScreen = document.querySelector('.startScreen');
-const controls = document.querySelector('.controls');
-const prev = document.querySelector('.prevVideo');
-const next = document.querySelector('.nextVideo');
-
 // media Q
 let desktopQ = window.matchMedia("(min-width:1000px)");
 
@@ -19,8 +11,110 @@ let isFirstRun = true;
 let videoNum = 0;
 
 if (desktopQ.matches) {
+    const mobileMain = document.querySelector('.main');
+    const startScreen = document.querySelector('.startScreen');
+
+    const holder = document.querySelector('.desktopVideoHolder');
+    const player = document.querySelector('.desktopPlayer');
+
+    const prev = document.querySelector('.deskPrev');
+    const next = document.querySelector('.deskNext');
+
+
+    mobileMain.classList.add('gone');
+    startScreen.classList.add('gone');
+
+    selectVideos(videoType);
+
+    async function selectVideos(videoType) {
+        const res = await fetch('videos.json');
+        const data = await res.json();
+        console.log(data[videoType]);
+    
+        const videoTypeArr = data[videoType];
+    
+        startScreen.classList.add('active');
+        displayVideo(videoTypeArr, videoNum);
+
+        prev.addEventListener('click', () => {
+            isFirstRun = false;
+            videoNum--;
+            if (videoNum === -1) {
+                videoNum = videoTypeArr.length - 1;
+            }
+            displayVideo(videoTypeArr, videoNum);
+        });
+        next.addEventListener('click', () => {
+            isFirstRun = false;
+            videoNum++;
+            if (videoNum === videoTypeArr.length) {
+                videoNum = 0;
+            }
+            displayVideo(videoTypeArr, videoNum);
+        });
+
+    }
+
+    //displaying videos
+    function displayVideo(videoTypeArr, videoNum) {  
+        const videoArr = videoTypeArr[videoNum];
+        const videoLink = videoArr[0];
+        const videoHeight = videoArr[1];
+
+        console.log(videoLink);
+    
+        player.src = videoLink;
+        player.play();
+
+        if (videoHeight === 900) {
+            // holder.classList.add('small');
+            // player.classList.remove('big');
+        }
+        else if (videoHeight === 1000) {
+            holder.classList.remove('deskSmall');
+            player.classList.add('deskBig');
+        }
+    
+        // if (videoNum === 0 && isFirstRun === true) {
+        //     startScreen.classList.add('active');
+        //     controls.classList.add('gone');
+        //     player.pause();
+    
+        //     startScreen.addEventListener('click', () => {
+        //         startScreen.classList.remove('active');
+        //         startScreen.classList.add('gone');
+        //         controls.classList.remove('gone');
+        //         controls.classList.add('active');
+        //         player.play();
+        //     });
+        // }
+        // else {
+        //     startScreen.classList.remove('active');
+        //     startScreen.classList.add('gone');
+        // }
+    }
+
+    const homeBtn = document.querySelector('.desktopHomeBtn');
+    homeBtn.addEventListener('mousedown', () => {
+        homeBtn.classList.add('clickActive');
+    });
+    homeBtn.addEventListener('mouseup', () => {
+        homeBtn.classList.remove('clickActive');
+    });
+
     console.log('desktop!');
 } else {
+    const desktopMain = document.querySelector('.desktopMain');
+    desktopMain.classList.add('gone');
+
+    const holder = document.querySelector('.videoHolder');
+    const player = document.querySelector('.player');
+
+    const startScreen = document.querySelector('.startScreen');
+    const controls = document.querySelector('.controls');
+    const prev = document.querySelector('.prevVideo');
+    const next = document.querySelector('.nextVideo');
+
     selectVideos(videoType);
 
     async function selectVideos(videoType) {

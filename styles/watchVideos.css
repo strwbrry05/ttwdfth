@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-y: hidden;
 }
 
 
@@ -100,8 +99,95 @@ body {
     display: none;
 }
 
+/* DESKTOP */
+.desktopTitle {
+    font-family: var(--font-title);
+    font-size: 3.5rem;
+    width: 100%;
+    padding: 0.5em 2em;
+    line-height: 40px;
+
+    justify-self: start;
+}
+.pinkColor {
+    color: var(--color-pink);
+}
+
+.desktopMain {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   /* background-color: green; */
+}
+
+.desktopVideoHolder {
+    /* background-color: gray; */
+    width: 600px;
+    height: 600px;
+
+    margin-top: -1.75em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deskPrev {
+    color: var(--color-pink);
+    transform: scale(2.5);
+    /* background-color: green; */
+    margin-right: 3em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deskNext {
+    color: var(--color-pink);
+    transform: scale(2.5);
+    /* background-color: green; */
+    margin-left: 3em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.deskNext:hover, .deskPrev:hover {
+    cursor: pointer;
+}
+
+.desktopPlayer {
+    /* background-color: paleturquoise; */
+    width: 330px;
+}
+
+.desktopHomeBtn {
+    background-color: var(--color-pink);
+    font-weight: 600;
+    margin-top: 2em;
+    padding: 0.25em 4em;
+    border-radius: 25px;
+    background-color: var(--color-black);
+    border: 2px solid var(--color-pink);
+}
+.desktopHomeBtn:hover {
+    cursor: pointer;
+}
+.desktopHomeBtn.clickActive {
+    background-color: var(--color-pink);
+    color: var(--color-black);
+}
+
+.desktopMain.gone {
+    display: none;
+}
+
 /* ##############
-     MAIN
+     MAIN MOBILE
 ################*/
 .main {
     min-height: 100vh;
@@ -116,6 +202,10 @@ body {
 
     position: relative;
     z-index: 1; 
+}
+
+.main.gone {
+    display: none;
 }
 
 
