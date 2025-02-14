@@ -37,8 +37,9 @@ body {
     z-index: 0;
 }
 
-/*  START SCREEN
-    mobile exclusive  */
+/*  #############
+    START SCREEN
+###################  */
 
 .startScreen.active {
     height: 660px;
@@ -124,7 +125,7 @@ body {
     height: 35px;
     padding: 0.75em 0.75em;
     margin: 1em;
-    background-color: var(--color-pink);
+    background-color: var(--color-gray);
     color: var(--color-black);
     font-weight: 600;
     border-radius: 25px;
@@ -140,9 +141,6 @@ body {
 /* video holder and player dimensions*/
 .videoHolder {
     overflow-x: hidden;
-
-    /* margin-top: 50px; */
-    /* padding: 1em 0; */
 
     display: grid;
     grid-template-columns: 1fr;
@@ -169,7 +167,6 @@ body {
     width: 100%;
     grid-row: 1;
     grid-column: 1;
-    /* height: 100%; */
 }
 
 
@@ -216,8 +213,11 @@ body {
     z-index: 4;
 }
 
-.fa-solid {
-    color: #f193a1;
+.fa-house, .fa-pause, .fa-play {
+    color: var(--color-pink);
+}
+.fa-floppy-disk {
+    color: var(--color-gray);
 }
 
 .menuOptions {

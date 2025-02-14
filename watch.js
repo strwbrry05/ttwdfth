@@ -52,8 +52,6 @@ async function selectVideos(videoType) {
 }
 
 
-
-
 //displaying videos
 function displayVideo(videoTypeArr, videoNum) {  
     const videoArr = videoTypeArr[videoNum];
