@@ -43,6 +43,10 @@ body {
     line-height: 0.8;
 }
 
+.pinkColor {
+    color: var(--color-pink);
+}
+
 /* ##############
         MAIN 
 #################*/

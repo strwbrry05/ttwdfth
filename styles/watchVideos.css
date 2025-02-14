@@ -41,7 +41,7 @@ body {
     mobile exclusive  */
 
 .startScreen.active {
-    min-height: 100vh;
+    height: 650px;
 
     display: grid;
     grid-template-columns: 1fr;
@@ -52,11 +52,12 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
+    background-color: palegoldenrod;
     z-index: 3;
 }
 
 .blackScreen{
-    min-height: inherit;
+    height: inherit;
 
     grid-row: 1;
     grid-column: 1;
