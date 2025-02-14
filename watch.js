@@ -8,13 +8,9 @@ const holder = document.querySelector('.videoHolder');
 const player = document.querySelector('.player');
 
 const startScreen = document.querySelector('.startScreen');
-const instructions = document.querySelector('.instructions');
-const leftI = document.querySelector('.left');
-
 const controls = document.querySelector('.controls');
 const prev = document.querySelector('.prevVideo');
 const next = document.querySelector('.nextVideo');
-
 
 let isFirstRun = true;
 let videoNum = 0;
@@ -38,6 +34,8 @@ async function selectVideos(videoType) {
         if (videoNum === -1) {
             videoNum = videoTypeArr.length - 1;
         }
+        pausePlay.innerHTML = `<i class="fa-solid fa-pause fa-xl"></i>`;
+        isPaused = false;
         displayVideo(videoTypeArr, videoNum);
     });
 
@@ -47,6 +45,8 @@ async function selectVideos(videoType) {
         if (videoNum === videoTypeArr.length) {
             videoNum = 0;
         }
+        pausePlay.innerHTML = `<i class="fa-solid fa-pause fa-xl"></i>`;
+        isPaused = false;
         displayVideo(videoTypeArr, videoNum);
     });
 }
@@ -56,8 +56,6 @@ async function selectVideos(videoType) {
 
 //displaying videos
 function displayVideo(videoTypeArr, videoNum) {  
-
-
     const videoArr = videoTypeArr[videoNum];
     const videoLink = videoArr[0];
     const videoHeight = videoArr[1];
@@ -90,6 +88,32 @@ function displayVideo(videoTypeArr, videoNum) {
         startScreen.classList.remove('active');
         startScreen.classList.add('gone');
     }
-
 }
+
+const homeBtn = document.querySelector('.fa-house');
+const pausePlay = document.querySelector('.pausePlay');
+const pauseBtn = document.querySelector('.fa-pause');
+const saveBtn = document.querySelector('.fa-floppy-disk');
+
+homeBtn.addEventListener('click', () => {
+    window.location.href = 'index.html';
+});
+
+let isPaused = false;
+pausePlay.addEventListener('click', () => {
+    if (isPaused) {
+        player.play();
+        pausePlay.innerHTML = `<i class="fa-solid fa-pause fa-xl"></i>`;
+        isPaused = false;
+    } else {
+        player.pause();
+        pausePlay.innerHTML = `<i class="fa-solid fa-play fa-xl"></i>`;
+        isPaused = true;
+    }
+});
+
+
+// GRID VIEW
+const viewMenu = document.querySelector('.viewMenu');
+// go to new page
 
