@@ -123,6 +123,7 @@ if (desktopQ.matches) {
     
         const videoTypeArr = data[videoType];
     
+        pauseScreen.classList.add('gone');
         startScreen.classList.add('active');
         displayVideo(videoTypeArr, videoNum);
     
@@ -157,6 +158,8 @@ if (desktopQ.matches) {
         const videoHeight = videoArr[1];
     
         player.src = videoLink;
+        pauseScreen.classList.add('gone');
+
         if (videoHeight === 900) {
             holder.classList.add('small');
             player.classList.remove('big');
