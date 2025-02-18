@@ -90,7 +90,7 @@ body {
     START SCREEN
 ###################  */
 
-.startScreen.active {
+.startScreen {
     height: 660px;
 
     display: grid;
@@ -105,7 +105,7 @@ body {
     z-index: 3;
 }
 
-.blackScreen{
+.blackScreen {
     height: inherit;
 
     grid-row: 1;

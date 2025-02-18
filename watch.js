@@ -10,6 +10,7 @@ let desktopQ = window.matchMedia("(min-width:900px)");
 let isFirstRun = true;
 let videoNum = 0;
 let isPaused = false;
+let isMuted = false;
 
 if (desktopQ.matches) {
     const mobileMain = document.querySelector('.main');
@@ -103,12 +104,15 @@ if (desktopQ.matches) {
 
     console.log('desktop!');
 } else {
+    // remove unwanted desktop elements
     const desktopMain = document.querySelector('.desktopMain');
     desktopMain.classList.add('gone');
 
+    // main document elements
     const holder = document.querySelector('.videoHolder');
     const player = document.querySelector('.player');
 
+    // instructions + controls
     const startScreen = document.querySelector('.startScreen');
     const controls = document.querySelector('.controls');
     const prev = document.querySelector('.prevVideo');
@@ -195,9 +199,6 @@ if (desktopQ.matches) {
     const pausePlay = document.querySelector('.pausePlay');
     const pauseScreen = document.querySelector('.pauseScreen');
     const muteOverlay = document.querySelector('.muteOverlay');
-
-
-    let isMuted = false;
 
     muteBtn.addEventListener('click', () => {
         if (isMuted) {
