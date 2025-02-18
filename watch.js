@@ -5,7 +5,7 @@ const videoType = urlParams.get('videos');
 console.log(videoType);
 
 // media Q
-let desktopQ = window.matchMedia("(min-width:1000px)");
+let desktopQ = window.matchMedia("(min-width:900px)");
 
 let isFirstRun = true;
 let videoNum = 0;
@@ -67,6 +67,8 @@ if (desktopQ.matches) {
         console.log(videoLink);
     
         player.src = videoLink;
+        pausePlay.classList.remove('pause');
+        pausePlay.innerHTML = ``;
         player.play();
 
         if (videoHeight === 1000) {

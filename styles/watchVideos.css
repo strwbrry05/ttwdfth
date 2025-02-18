@@ -129,7 +129,7 @@ body {
     height: 600px;
 
     /* margin-top: -1.75em; */
-    margin-top: -2.25em;
+    margin-top: -1em;
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -191,7 +191,7 @@ body {
     grid-column: 2/3;
     grid-row: 1;
     z-index: 2;
-    height: 600px;
+    height: 100%;
     width: 100%;
 
     display: flex;
@@ -219,10 +219,12 @@ body {
 }
 .desktopHomeBtn:hover {
     cursor: pointer;
-}
-.desktopHomeBtn.clickActive {
     background-color: var(--color-pink);
     color: var(--color-black);
+}
+.desktopHomeBtn.clickActive {
+    background-color: var(--color-black);
+    color: var(--color-white);
 }
 
 .desktopMain.gone {

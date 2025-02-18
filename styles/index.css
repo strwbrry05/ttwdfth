@@ -149,6 +149,9 @@ body {
 
 .item.levitate {
     margin-bottom: 4em;
+    box-shadow: 1px 0px 15px 7px var(--color-pink);
+    margin-left: 1em;
+    margin-right: 1em;
 }
 
 /* ##############
@@ -160,7 +163,7 @@ body {
 }
 
 
-@media (min-width:1000px) {
+@media (min-width:900px) {
     /* ##############
         TITLE 
     #################*/
