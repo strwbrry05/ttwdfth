@@ -263,7 +263,7 @@ body {
 .desktopHomeBtn {
     background-color: var(--color-pink);
     font-weight: 600;
-    margin-top: 0.25em;
+    /* margin-top: 0.25em; */
     padding: 0.25em 4em;
     border-radius: 25px;
     background-color: var(--color-black);
