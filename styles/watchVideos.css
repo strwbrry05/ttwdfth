@@ -57,10 +57,34 @@ body {
     font-family: var(--font-headings);
     color: var(--color-pink);
 }
-
 .pauseScreen.gone {
     display: none;
 }
+
+/*  #############
+    MUTE SCREEN
+###################  */
+
+.muteOverlay {
+    height: 100%;
+
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 0.5em;
+    font-size: 1.5rem;
+    font-family: var(--font-headings);
+    color: var(--color-pink);
+}
+.muteOverlay.gone {
+    display: none;
+}
+
+
 
 /*  #############
     START SCREEN

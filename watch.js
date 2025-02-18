@@ -158,6 +158,7 @@ if (desktopQ.matches) {
         const videoHeight = videoArr[1];
     
         player.src = videoLink;
+        muteOverlay.classList.add('gone');
         pauseScreen.classList.add('gone');
 
         if (videoHeight === 900) {
@@ -190,10 +191,28 @@ if (desktopQ.matches) {
     }
     
     const homeBtn = document.querySelector('.fa-house');
+    const muteBtn = document.querySelector('.fa-volume-xmark');
     const pausePlay = document.querySelector('.pausePlay');
     const pauseScreen = document.querySelector('.pauseScreen');
+    const muteOverlay = document.querySelector('.muteOverlay');
 
-    pauseScreen.addEventListener('click', () => console.log('click'));
+
+    let isMuted = false;
+
+    muteBtn.addEventListener('click', () => {
+        if (isMuted) {
+            player.muted = false;
+            isMuted = false;
+            muteOverlay.classList.add('gone');
+            console.log('mute');
+        } else {
+            player.muted = true;
+            isMuted = true;
+            muteOverlay.classList.remove('gone');
+            console.log('unmute');
+
+        }
+    });
     
     homeBtn.addEventListener('click', () => {
         window.location.href = 'index.html';
