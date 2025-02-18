@@ -17,7 +17,7 @@ let isMuted = false;
 
 // FETCHING JSON VIDEO DATA (videos.json)
 async function selectVideos(videoType) {
-    const res = await fetch('videos.json');
+    const res = await fetch('utils/videos.json');
     const data = await res.json();    
     const videoArr = data[videoType];
     return videoArr;

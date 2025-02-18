@@ -1,10 +1,10 @@
 
+// start scrollbar in the center
 const horizontalScroll = document.querySelector('.items');
 const main = document.querySelector('.main');
 horizontalScroll.scrollLeft = (horizontalScroll.scrollWidth - horizontalScroll.clientWidth) / 2;
 
-
-// linking to watch page
+// LINK TO WATCH PAGE AFTER ANIMATION
 const items = document.querySelectorAll('[data-link]');
 
 items.forEach(item => item.addEventListener('click', () => {
@@ -17,8 +17,7 @@ items.forEach(item => item.addEventListener('click', () => {
     }, 2000);
 }));
 
-
-// drag scroll bar
+// DRAG SCROLL BAR
 const slider = document.querySelector('.items');
 let isDown = false;
 let startX;
