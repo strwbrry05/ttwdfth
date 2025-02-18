@@ -9,6 +9,8 @@ let desktopQ = window.matchMedia("(min-width:900px)");
 const desktopMain = document.querySelector('.desktopMain');
 const mobileMain = document.querySelector('.main');
 const startScreen = document.querySelector('.startScreen');
+const menu = document.querySelector('.menu');
+
 
 let isFirstRun = true;
 let videoNum = 0;
@@ -26,8 +28,10 @@ const videoArr = await selectVideos(videoType);
 
 if (desktopQ.matches) {
     // getting rid of unwanted mobile elements
-    mobileMain.classList.add('gone');
     startScreen.classList.add('gone');
+    mobileMain.classList.add('gone');
+    menu.classList.add('gone'); 
+
     // main elements
     const player = document.querySelector('.desktopPlayer');
     const prev = document.querySelector('.deskPrev');
@@ -69,7 +73,7 @@ if (desktopQ.matches) {
         player.src = videoLink;
         pausePlay.classList.remove('pause');
         pausePlay.innerHTML = ``;
-        player.play();
+        // player.play();
 
         if (videoHeight === 1000) {
             player.classList.add('deskBig');
