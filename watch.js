@@ -188,8 +188,9 @@ if (desktopQ.matches) {
     
     const homeBtn = document.querySelector('.fa-house');
     const pausePlay = document.querySelector('.pausePlay');
-    const pauseBtn = document.querySelector('.fa-pause');
-    // const saveBtn = document.querySelector('.fa-floppy-disk');
+    const pauseScreen = document.querySelector('.pauseScreen');
+
+    pauseScreen.addEventListener('click', () => console.log('click'));
     
     homeBtn.addEventListener('click', () => {
         window.location.href = 'index.html';
@@ -199,10 +200,12 @@ if (desktopQ.matches) {
     pausePlay.addEventListener('click', () => {
         if (isPaused) {
             player.play();
+            pauseScreen.classList.add('gone');
             pausePlay.innerHTML = `<i class="fa-solid fa-pause fa-xl"></i>`;
             isPaused = false;
         } else {
             player.pause();
+            pauseScreen.classList.remove('gone');
             pausePlay.innerHTML = `<i class="fa-solid fa-play fa-xl"></i>`;
             isPaused = true;
         }
