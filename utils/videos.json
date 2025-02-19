@@ -50,6 +50,10 @@
  ["media/content/wizarding/wizarding_video5.mp4", 900],
  ["media/content/wizarding/wizarding_video6.mp4", 900],
  ["media/content/wizarding/wizarding_video7.mp4", 900]],
- "iwtv": [],
+ "iwtv": [["media/content/iwtv/iwtv_video1.mp4", 900],
+ ["media/content/iwtv/iwtv_video2.mp4", 900],
+ ["media/content/iwtv/iwtv_video3.mp4", 900],
+ ["media/content/iwtv/iwtv_video4.mp4", 900],
+ ["media/content/iwtv/iwtv_video5.mp4", 900]],
  "funny": []
 }
