@@ -55,5 +55,14 @@
  ["media/content/iwtv/iwtv_video3.mp4", 900],
  ["media/content/iwtv/iwtv_video4.mp4", 900],
  ["media/content/iwtv/iwtv_video5.mp4", 900]],
- "funny": []
+ "funny": [["media/content/funny/funny_video1.mp4", 1000],
+ ["media/content/funny/funny_video2.mp4", 1000],
+ ["media/content/funny/funny_video3.mp4", 1000],
+ ["media/content/funny/funny_video4.mp4", 1000],
+ ["media/content/funny/funny_video5.mp4", 1000],
+ ["media/content/funny/funny_video6.mp4", 1000],
+ ["media/content/funny/funny_video7.mp4", 1000],
+ ["media/content/funny/funny_video8.mp4", 1000],
+ ["media/content/funny/funny_video9.mp4", 900],
+ ["media/content/funny/funny_video10.mp4", 900]]
 }
