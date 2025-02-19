@@ -223,7 +223,3 @@ if (desktopQ.matches) {
         }
     });
 }
-
-// GRID VIEW
-const viewMenu = document.querySelector('.viewMenu');
-// go to new page
