@@ -43,7 +43,13 @@
  ["media/content/dw/dw_video8.mp4", 900],
  ["media/content/dw/dw_video9.mp4", 900],
  ["media/content/dw/dw_video10.mp4", 900]],
- "wizarding": [],
+ "wizarding": [["media/content/wizarding/wizarding_video1.mp4", 900],
+ ["media/content/wizarding/wizarding_video2.mp4", 900],
+ ["media/content/wizarding/wizarding_video3.mp4", 900],
+ ["media/content/wizarding/wizarding_video4.mp4", 900],
+ ["media/content/wizarding/wizarding_video5.mp4", 900],
+ ["media/content/wizarding/wizarding_video6.mp4", 900],
+ ["media/content/wizarding/wizarding_video7.mp4", 900]],
  "iwtv": [],
  "funny": []
 }
