@@ -185,7 +185,7 @@ body {
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
     justify-content: center;
     align-items: center;
 
@@ -263,7 +263,7 @@ body {
 .desktopHomeBtn {
     background-color: var(--color-pink);
     font-weight: 600;
-    margin-top: -0.5em;
+    /* margin-top: -0.25em; */
     padding: 0.25em 4em;
     border-radius: 25px;
     background-color: var(--color-black);
