@@ -40,11 +40,13 @@ When page is viewed through a mobile screen, the controls for viewing videos are
 ## Built Using
 - HTML
 - CSS
+- JS
 - VSCode
 
 ## Contact
 Any comments, questions, or concerns?\
 Contact Jacqueline Molina: molina.jq19@gmail.com
+
 
 
 
