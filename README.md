@@ -30,9 +30,12 @@ When page is viewed through a mobile screen, the controls for viewing videos are
 </span>
 
 ## Potential Improvements
-- MOBILE_VIDEO:
+- MOBILE_VIDEO: If possible, I'd like for the bottom menu to have stuck to the bottom of the user's screen like an actual menu/nav bar. For that to happen, each video would have to be resized, OR the bottom menu would have to have used a sticky display.
+- MOBILE_VIDEO: Ideally, the instructions menu wouldnt appear each time a user selects a new catgory, but for mobile development, videos don't automatically play. Perhaps, I could find a way around that.
+<br/>
 
-- DESKTOP_VIDEO:
+- DESKTOP_VIDEO: Only issue I see with the desktop videos are the video sizes, they could potentially be larger in order to have better optics for the user.
+- DESKTOP_VIDEO: Additionally, it would have been nice to provide a mute button for desktop videos as well as a download button for users who wish to save that specific video themselves.
 
 ## Built Using
 - HTML
@@ -42,5 +45,6 @@ When page is viewed through a mobile screen, the controls for viewing videos are
 ## Contact
 Any comments, questions, or concerns?\
 Contact Jacqueline Molina: molina.jq19@gmail.com
+
 
 
