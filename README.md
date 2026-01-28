@@ -7,16 +7,22 @@
 Created slightly after properly learning about web design principles, this page contains sleek and aesthetically pleasing colors, formatting, and fonts. In addition, I had just finished a course on Javascript fundamentals and couldnt wait to put them to use. What better way to do that than to create your own project and have fun with it. The tiktok shut down, like many other individuals my age, brought upon fear and panic. I would no longer be able to see the videos that had brightened my day or made me laugh on various occasions. In response, I created this website as more of a challenge to myself than anything, to see what exactly I had learned up to this point and what my current limits were. To this day, I think fondly of this page and everything I was able to accomplish with it.
 
 ### Home
+Horizontal scroll layout; with catgegories glowing and enlarging when hovered over. Contains the ability to drag to scroll or just use the scroll bar provided.
+
 <img src="ttwdfth_files/about_Home.png" width="650"/>
 <img src="ttwdfth_files/about_select.png" width="650"/>
 
 
 ### Video View
+After selecting a catgory, videos will automatically begin to play. Provided are two arrows to move back and forth between videos. If the user wishes to pause a video, all they simply need to do is click on the video and a pause symbol will appear. To return to the home page, a user can either press the home button or select the title, both of which will return the user.
+
 <img src="ttwdfth_files/about_video.png" width="650"/>
 <img src="ttwdfth_files/about_video_pause.png" width="650"/>
 
 
 ## Responsive View
+When page is viewed through a mobile screen, the controls for viewing videos are slightly different. The home screen largely remains the same. After selecting a category of video, user instructions/directions will present themselves. In order to move between videos, the user needs to click on either the left side of the screen or the right side of the screen. There are also three addional controls at the bottom of the page. The first is to play/pause the video. The second is to return home (a user may also select the title to return home). The third is to mute the current video.
+
 <span>
 <img src="ttwdfth_files/media_home.png" width="250"/>
 <img src="ttwdfth_files/media_instr.png" width="250"/>
@@ -24,6 +30,9 @@ Created slightly after properly learning about web design principles, this page 
 </span>
 
 ## Potential Improvements
+- MOBILE_VIDEO:
+
+- DESKTOP_VIDEO:
 
 ## Built Using
 - HTML
@@ -33,4 +42,5 @@ Created slightly after properly learning about web design principles, this page 
 ## Contact
 Any comments, questions, or concerns?\
 Contact Jacqueline Molina: molina.jq19@gmail.com
+
 
